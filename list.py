@@ -1,17 +1,12 @@
 ###--- IMPORTS ---###
 import os
-import sys
-import platform
-import settings
 
 
 ###--- FUNCTIONS ---###
-def user_name():
-    print(os.name)
-    print(sys.platform)
-    print(platform.system())
+def list_commands_and_create_txt():
+    os.system('compgen -c')
 
 
 ###--- DRIVER CODE ---###
 if __name__ == "__main__":
-    user_name()
+    list_commands_and_create_txt()
