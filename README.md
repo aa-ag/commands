@@ -1,6 +1,8 @@
 # Commands
 
-Python script to list all `terminal` commands in one table to easy consultation. 
+Python script to list all `terminal` commands in one table to easy consultation.
+
+To save into `.txt`, run `python list.py > all.txt` in terminal.
 
 ## Alternative
 
