@@ -10,8 +10,9 @@ def list_commands_and_create_txt():
 
 
 def count_commands():
-    with open('all_commands.txt', 'r') as ac:
-        commands_list = [i for i in ac.read().splitlines()]
+    with open('all_commands.txt', 'r') as all_commands_txt:
+        commands_list = [
+            command for command in all_commands_txt.read().splitlines()]
         print(len(commands_list))
 
 
