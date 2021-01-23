@@ -26,7 +26,7 @@ There are _2320_ terminal commands.
 
 Trying to create table with two columns: 
 
-* command name
+* command name: thru [`apropos`](https://www.wikiwand.com/en/Apropos_(Unix))
 * [man page](https://www.wikiwand.com/en/Man_page)
 
 ## SEE
