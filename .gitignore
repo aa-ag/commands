@@ -5,6 +5,8 @@ settings.py
 # .DS_Store
 .DS_Store
 
+all_commands_apropos.csv
+
 # commands in text
 all_commands.txt
 

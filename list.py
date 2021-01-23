@@ -30,19 +30,16 @@ def apropos_table():
      each command's "apropos."
     '''
 
-    fields = ['command', 'apropos']
+    all_commands = open('all_commands.txt', 'r')
 
-    all_commands_txt = open('all_commands.txt', 'r')
-    commands_reader = all_commands_txt.read().splitlines()
+    commands_reader = all_commands.read()
 
     with open('all_commands_apropos.csv', 'w+', newline='') as commands_csv:
-        commands_csv_writer = csv.DictWriter(commands_csv, fieldnames=fields)
-
-        commands_csv_writer.writeheader()
-
         for command in commands_reader:
-            commands_csv_writer.writerows(
-                [{'command': command, 'apropos': 'test'}])
+            subprocess.run(f'apropos {command}',
+                           shell=True, stdout=commands_csv)
+
+    commands_csv.close()
 
 
 ###--- DRIVER CODE ---###
