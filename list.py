@@ -9,9 +9,7 @@ def list_commands_and_create_txt():
      lists all commands using running "compgen -c" command
      in terminal, and "writes" output into .txt file
     '''
-    all_commands = open('all_commands.txt', 'w+')
-    subprocess.run('compgen -c', shell=True, stdout=all_commands)
-    all_commands.close()
+    subprocess.run('compgen -c > all_commands.txt', shell=True)
 
 
 def count_commands():
@@ -21,7 +19,7 @@ def count_commands():
     with open('all_commands.txt', 'r') as all_commands_txt:
         commands_list = [
             command for command in all_commands_txt.read().splitlines()]
-        print(len(commands_list))
+        print(len(commands_list))  # 2320
 
 
 def apropos_table():
@@ -34,12 +32,13 @@ def apropos_table():
 
     commands_reader = all_commands.read()
 
-    with open('all_commands_apropos.csv', 'w+', newline='') as commands_csv:
-        for command in commands_reader:
-            subprocess.run(f'apropos {command}',
-                           shell=True, stdout=commands_csv)
+    apropos_commands = ''
 
-    commands_csv.close()
+    for command in commands_reader:
+        apropos_commands += f'{command} '
+
+    subprocess.run(
+        f'apropos {apropos_commands}&>> all_apropos.txt', shell=True)
 
 
 ###--- DRIVER CODE ---###

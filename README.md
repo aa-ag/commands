@@ -36,3 +36,5 @@ Trying to create table with two columns:
 - `man -K keyword`
 
 - https://www.unix.com/linux-commands.php
+
+- https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file
