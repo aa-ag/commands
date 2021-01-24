@@ -41,8 +41,29 @@ def apropos_table():
         f'apropos {apropos_commands}>> all_apropos.txt', shell=True)
 
 
+def create_csv():
+    '''
+     opens txt created with all apropos, and creates csv
+    '''
+    all_apropos = open('all_apropos.txt', 'r')
+
+    apropos_reader = all_apropos.read()
+
+    with open('apropos_table.csv', 'w') as csvfile:
+        fields = ['#', 'command', 'apropos']
+
+        writer = csv.DictWriter(csvfile, fieldnames=fields)
+
+        writer.writeheader()
+
+        for i, apropo in enumerate(apropos_reader.splitlines()):
+            writer.writerow({'#': i + 1, 'command': apropo.split(
+                '-')[0], 'apropos': apropo.split('-')[1]})
+
+
 ###--- DRIVER CODE ---###
 if __name__ == "__main__":
     # list_commands_and_create_txt()
     # count_commands()
-    apropos_table()
+    # apropos_table()
+    create_csv()

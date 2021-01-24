@@ -5,8 +5,9 @@ settings.py
 # .DS_Store
 .DS_Store
 
-# commands in text
+# txt's
 all_commands.txt
+all_apropos.txt
 
 # VSS
 .vscode
