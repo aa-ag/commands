@@ -34,11 +34,11 @@ def apropos_table():
 
     apropos_commands = ''
 
-    for command in commands_reader:
+    for command in commands_reader.splitlines():
         apropos_commands += f'{command} '
 
     subprocess.run(
-        f'apropos {apropos_commands}&>> all_apropos.txt', shell=True)
+        f'apropos {apropos_commands}>> all_apropos.txt', shell=True)
 
 
 ###--- DRIVER CODE ---###
