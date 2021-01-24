@@ -4,6 +4,8 @@ Python script to list all `terminal` commands in one table to easy consultation.
 
 There are _2320_ terminal commands.
 
+Output/resulting CSV in repo as `apropos_table.csv`. Only available as raw [due to size](https://docs.github.com/en/github/managing-files-in-a-repository/rendering-csv-and-tsv-data).
+
 ## Alternatives
 
 #### `zsh`
